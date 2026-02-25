@@ -1,0 +1,12 @@
+Hypothesis:
+My Hypothesis is meteorites are predominantly iron-based and tend to fall along specific latitude bands that are symmetrically distributed on either side of the equator.
+
+Problem Statement: 
+The objective of this project is to analyze meteorite strike data to determine whether impact locations follow consistent geographic patterns or occur randomly, and to evaluate the relationship between strike locations and meteorite composition.
+
+Validation plan:
+• Download the meteorite dataset (CSV format).
+• Categorize meteorite strikes by latitude and iron content (medium or higher vs. low or none).
+• Compare strike frequency across latitude bands in both hemispheres.
+• Analyze differences in iron content by geographic distribution.
+• Draw conclusions based on frequency comparisons and observed patterns.
