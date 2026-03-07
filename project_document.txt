@@ -1,5 +1,5 @@
 Hypothesis:
-My Hypothesis is meteorites are predominantly iron-based and tend to fall along specific latitude bands that are symmetrically distributed on either side of the equator.
+My Hypothesis is meteorites are predominantly high iron-based and tend to fall along specific latitude bands that are symmetrically distributed on either side of the equator.
 
 Problem Statement: 
 The objective of this project is to analyze meteorite strike data to determine whether impact locations follow consistent geographic patterns or occur randomly, and to evaluate the relationship between strike locations and meteorite composition.
@@ -10,3 +10,27 @@ Validation plan:
 • Compare strike frequency across latitude bands in both hemispheres.
 • Analyze differences in iron content by geographic distribution.
 • Draw conclusions based on frequency comparisons and observed patterns.
+
+What I did:
+First, I counted how many rows there are with 
+                awk 'END {print NR}' selected_data.txt
+This counted 45717 rows
+. Next, I counted the high iron content with 
+                awk -F ',' '$1 ~ /^H/ {count++}' selected_data.txt
+This counted 18160
+Then I counted the meteorites with iron in the name using this command 
+                awk -F ~/Iron/ {count++} END {print count}' selected_data.txt
+This counted 1069
+
+So we get 18160+1069 = 19,229
+
+Take that and divide by total -1 (not counting the header) 19,229/45716 gives us
+                               42% 
+                of the meteorites have high iron content.
+Since this is under half of the documented meteorites 
+
+The name convention of the meteorite content (looking at iron) you will see letters (H=High, L=Low, LL=very for how much iron there is) followed by a numbers 1-6 represents that numbers represent how much the material was changed by heat. 
+
+Then the Iron and Nickel combinations are represented with the word Iron in them.
+
+Thus far, my hypothesis meteorites are predominantly high iron-based. Over the break, I wish to explore using Docker in bash to do more sophisticated calculations regarding where the meteorites are falling.
